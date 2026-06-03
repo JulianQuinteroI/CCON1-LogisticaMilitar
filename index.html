@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mando Caribe · Atlas Logístico — Centro de Mando Geoespacial</title>
 
+<!-- Identidad / favicon — escudo CCON 1 «Caribe» -->
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="theme-color" content="#13243b">
+<meta name="description" content="Centro de Mando Geoespacial del sostenimiento logístico conjunto del Caribe colombiano — Comando Conjunto No. 1 «Caribe» (CCON 1), AOR «ALFA».">
+
+<!-- Open Graph / Twitter — miniatura al compartir -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mando Caribe — Atlas Logístico">
+<meta property="og:title" content="Mando Caribe · Atlas Logístico — CCON 1 «ALFA»">
+<meta property="og:description" content="Centro de Mando Geoespacial del sostenimiento logístico conjunto del Caribe colombiano.">
+<meta property="og:url" content="https://julianquinteroi.github.io/CCON1-LogisticaMilitar/">
+<meta property="og:image" content="https://julianquinteroi.github.io/CCON1-LogisticaMilitar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Escudo CCON 1 — Mando Caribe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mando Caribe · Atlas Logístico — CCON 1 «ALFA»">
+<meta name="twitter:description" content="Centro de Mando Geoespacial del sostenimiento logístico conjunto del Caribe colombiano.">
+<meta name="twitter:image" content="https://julianquinteroi.github.io/CCON1-LogisticaMilitar/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -52,6 +73,7 @@ aside.sidebar{
 @keyframes scan{0%{left:-40%}100%{left:130%}}
 .brand-mark{width:40px;height:40px;border-radius:11px;flex:0 0 auto;position:relative;background:radial-gradient(circle at 30% 25%,#e6f6fb,#ffffff);border:1px solid var(--glass-brd-hi);display:grid;place-items:center;box-shadow:var(--glow-cian)}
 .brand-mark svg{width:23px;height:23px}
+.brand-mark img.brand-logo{height:31px;width:auto;display:block;filter:drop-shadow(0 1px 2px rgba(12,30,60,.30))}
 .brand-mark .ring{position:absolute;inset:-5px;border:1px solid rgba(34,211,238,.3);border-radius:14px;animation:spin 9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .sb-brand .bt{min-width:0;white-space:nowrap;opacity:1;transition:opacity .2s}
@@ -370,7 +392,7 @@ table.data td.num{text-align:right;font-family:'JetBrains Mono';font-size:12.5px
   <aside class="sidebar">
     <div class="sb-brand">
       <div class="brand-mark"><div class="ring"></div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="1.6"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4" stroke="#c2740a"/></svg>
+        <img src="./ccon1-logo.png" alt="Escudo CCON 1 «Caribe»" class="brand-logo">
       </div>
       <div class="bt"><h1>Mando Caribe</h1><div class="sub">Atlas Logístico · CCON 1 «ALFA»</div></div>
     </div>
@@ -1037,6 +1059,7 @@ window.PUCC = (function () {
     kpis: [
       { v: 5, l: "Comandos Conjuntos geográficos", s: "CCON 1 a CCON 5" },
       { v: 5, l: "Comandos funcionales", s: "CCOES · CCOCI · CCFAF · CCOET · DECAT" },
+      { v: 1, l: "Comando Conjunto de Coordinación", s: "COLOC · Logístico" },
       { v: 7, l: "AOR nacionales (terrestres)", s: "ALFA → FOXTROT + INDIA" },
       { v: 5, l: "Fases del ciclo de generación", s: "Guía superior → Socialización" },
       { v: 73, l: "Siglas en el glosario", s: "Doctrina conjunta MFC" },
@@ -1150,12 +1173,19 @@ window.PUCC = (function () {
         funcion: "Enfrenta la delincuencia organizada transnacional (DOT) y las amenazas que trascienden las fronteras nacionales, coordinando capacidades conjuntas e interagenciales.", icon: "globe" },
     ],
 
+    // Comandos Conjuntos de Coordinación (autoridad de coordinación; las Fuerzas conservan el ADCON)
+    coordinacion: [
+      { sigla: "COLOC", nombre: "Comando Logístico Conjunto", pm: "Bogotá D.C.",
+        funcion: "Integra, coordina y sincroniza el sostenimiento logístico conjunto de las Fuerzas Militares en apoyo de los Comandos Conjuntos. Como comando de coordinación armoniza las capacidades logísticas orgánicas de cada Fuerza —que conservan su ADCON— con la infraestructura nacional y el apoyo interinstitucional; estandariza el abastecimiento, el mantenimiento, el transporte y la sanidad, y asegura la interdependencia conjunta para la proyección y continuidad de las operaciones en los AOR.", icon: "logist" },
+    ],
+
     // Marco doctrinal de unidades conjuntas
     marcoUnidades: [
       { tipo: "Comando Conjunto (CCON)", definicion: "Comando compuesto por elementos asignados o agregados de dos o más Fuerzas que operan bajo un único comandante de fuerza conjunta con una misión amplia y continua, designado desde el nivel estratégico. A cada CDTCC se le asigna un AOR geográfico." },
       { tipo: "Fuerza de Tarea Conjunta (FTC)", definicion: "Fuerza conjunta constituida para misiones con objetivos específicos y limitados que no requieren control centralizado de logística. Se le asigna un área de operaciones conjunta (AOC) y se disuelve al lograr su propósito." },
       { tipo: "Comando de componente de Fuerza", definicion: "Incluye al comandante de componente (terrestre, naval o aéreo) y todas las unidades e instalaciones bajo su mando. Recomienda al CDTFC el empleo de sus unidades y retiene administración, disciplina, apoyo y logística." },
       { tipo: "Comando Funcional", definicion: "Fuerza conjunta basada únicamente en funciones militares, sin región geográfica específica, con responsabilidades transregionales. En el PUCC: CCOES, CCOCI, CCFAF, CCOET y DECAT." },
+      { tipo: "Comando Conjunto de Coordinación", definicion: "Comando conjunto cuya autoridad principal es de coordinación: sincroniza y armoniza una función transversal —de manera destacada el sostenimiento logístico— entre las Fuerzas y los Comandos Conjuntos, sin asumir el control administrativo (ADCON) que aquellas conservan sobre sus unidades. Articula las capacidades comunes para garantizar la unidad de esfuerzo. En el PUCC, el Comando Logístico Conjunto (COLOC) ejerce esta función para el sostenimiento conjunto." },
       { tipo: "Componente Funcional (CCF)", definicion: "Mando compuesto por unidades de dos o más Fuerzas para misiones operacionales particulares. Es componente subordinado de una fuerza conjunta; su autoridad se define con base en el control operacional (OPCON)." },
     ],
 
@@ -2732,6 +2762,7 @@ window.TEMA4 = (function () {
         { name: "Ejército",             itemStyle: { color: T.ejercito } },
         { name: "Armada",               itemStyle: { color: T.armada } },
         { name: "FAC",                  itemStyle: { color: T.fac } },
+        { name: "Cmd. de Coordinación (Log.)", itemStyle: { color: "#0d9488" } },
       ];
       nodes = []; links = [];
       var N = function (id, nm, cat, sz, bold) {
@@ -2757,6 +2788,9 @@ window.TEMA4 = (function () {
 
       // ── Comandos Funcionales (enlace discontinuo) ────────────────────────
       P.funcionales.forEach(function (f) { N(f.sigla, f.sigla, 3, 18); L("cgfm", f.sigla, true); });
+
+      // ── Comando Conjunto de Coordinación · COLOC (enlace discontinuo) ─────
+      (P.coordinacion || []).forEach(function (c) { N(c.sigla, c.sigla, 8, 20, true); L("cgfm", c.sigla, true); });
 
       // ════════════════════════════════════════════════════════════════════
       // EXPANSIÓN CCON 1 — Tres componentes conjuntos
@@ -2889,6 +2923,7 @@ window.TEMA4 = (function () {
     air: '<svg viewBox="0 0 24 24" fill="none" stroke="' + T.conjunto + '" stroke-width="1.6"><path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-3.5L21 16z"/></svg>',
     peace: '<svg viewBox="0 0 24 24" fill="none" stroke="' + T.conjunto + '" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M12 12l6-4M12 12l-6-4"/></svg>',
     globe: '<svg viewBox="0 0 24 24" fill="none" stroke="' + T.conjunto + '" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
+    logist: '<svg viewBox="0 0 24 24" fill="none" stroke="' + T.conjunto + '" stroke-width="1.6"><path d="M3 6h11v9H3zM14 9.5h3.6l3.4 3.2V15h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17.5" cy="18" r="1.7"/></svg>',
   };
   function buildDoctrina() {
     var pad = $("#doctrinaPad"), id = P.identificacion, html = "";
@@ -2908,6 +2943,11 @@ window.TEMA4 = (function () {
     html += '<div class="section-label">Comandos funcionales</div><div class="func-grid">';
     P.funcionales.forEach(function (f) { html += card('<div class="fh"><div class="fi">' + (FUNC_ICON[f.icon] || "") + '</div><div><div class="ft">' + esc(f.sigla) + '</div><div class="fsig">' + esc(f.nombre) + "</div></div></div><p>" + esc(f.funcion) + '</p><p style="color:var(--tinta-mut);margin-top:6px;font-family:JetBrains Mono;font-size:11px">PM · ' + esc(f.pm) + "</p>", "card func", true); });
     html += "</div>";
+    if (P.coordinacion && P.coordinacion.length) {
+      html += '<div class="section-label">Comandos Conjuntos de Coordinación</div><div class="func-grid">';
+      P.coordinacion.forEach(function (f) { html += card('<div class="fh"><div class="fi">' + (FUNC_ICON[f.icon] || "") + '</div><div><div class="ft">' + esc(f.sigla) + '</div><div class="fsig">' + esc(f.nombre) + "</div></div></div><p>" + esc(f.funcion) + '</p><p style="color:var(--tinta-mut);margin-top:6px;font-family:JetBrains Mono;font-size:11px">PM · ' + esc(f.pm) + "</p>", "card func", true); });
+      html += "</div>";
+    }
     html += '<div class="section-label">Marco doctrinal · unidades conjuntas</div><div class="instr-grid">';
     P.marcoUnidades.forEach(function (m) { html += card("<h4>" + esc(m.tipo) + "</h4><p>" + esc(m.definicion) + "</p>", "card instr", true); });
     html += "</div>";
