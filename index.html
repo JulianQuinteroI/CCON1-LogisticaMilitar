@@ -745,7 +745,7 @@ window.ATLAS = (function () {
   ];
 
   // ---- Centros de combustible (Clase III) — capacidad NO orgánica ----------
-  // Fuente: presentación oficial CCON1 (§4 centros de combustible). Coords =
+  // Fuente: presentación oficial CCON1 (-4 centros de combustible). Coords =
   // ciudad de referencia; la presentación no entrega coords ni volúmenes.
   const centrosCombustible = [
     { nombre: "Centro de Combustible Riohacha", ciudad: "Riohacha", dep: "La Guajira", operador: "Ecopetrol", productos: "ACPM, gasolina, Jet A-1", capacidades: "Tanques de almacenamiento, despacho", uso: "Apoyo a operaciones terrestres, aéreas y marítimas en La Guajira.", lat: 11.54, lon: -72.91 },
@@ -793,7 +793,7 @@ window.ATLAS = (function () {
   ];
 
   // ---- Infraestructura estratégica discreta (energía/agua/hidrocarburos/...) ---
-  // Capacidad NO orgánica nombrada en la presentación CCON1 (§4 infra civil). Solo
+  // Capacidad NO orgánica nombrada en la presentación CCON1 (-4 infra civil). Solo
   // activos discretos NUEVOS (los aeropuertos/puertos ya están en sus arrays). Coord =
   // ciudad cuando la fuente la nombra; null = la fuente no la ubica (no se geolocaliza).
   const infraEstrategica = [
@@ -1050,7 +1050,7 @@ window.PUCC = (function () {
     },
 
     definicion:
-      "El PUCC es un documento elaborado por el Comando General de las FF.MM. y aprobado por el Presidente de la República que establece las <em>directrices básicas</em> para todos los Comandantes de Comandos Conjuntos: misiones, responsabilidades y estructura de fuerza; delinea el <em>área geográfica general de responsabilidad (AOR)</em> de los Comandos Conjuntos; y especifica las responsabilidades de los comandos funcionales (MFC 1.0 §2-34).",
+      "El PUCC es un documento elaborado por el Comando General de las FF.MM. y aprobado por el Presidente de la República que establece las <em>directrices básicas</em> para todos los Comandantes de Comandos Conjuntos: misiones, responsabilidades y estructura de fuerza; delinea el <em>área geográfica general de responsabilidad (AOR)</em> de los Comandos Conjuntos; y especifica las responsabilidades de los comandos funcionales (MFC 1.0 -2-34).",
 
     proposito:
       "Establecer las directrices, misiones, responsabilidades y estructura de fuerza de los Comandos Conjuntos; delinear sus AOR y las responsabilidades de los comandos funcionales; y servir de guía para la implementación del Plan de Campaña Estratégico Conjunto «Ayacucho» 2023–2026, organizando el teatro estratégico, la estructura de fuerza, las relaciones de mando y la intención del CGFM.",
@@ -1451,7 +1451,7 @@ window.ATLAS_EXTRA = (function () {
     nota: "AOR «ALFA» del CCON 1 «Caribe». El Atlas modela un superconjunto de 9 departamentos: la presentación oficial de sostenimiento lista 8 departamentos incluyendo Córdoba pero excluyendo Norte de Santander; el Atlas conserva Norte de Santander (teatro del Catatumbo, ya cargado) y añade Córdoba. Divergencia documentada en «Acerca».",
   };
 
-  /* --- Capacidades NO orgánicas a integrar (9 categorías, §4) --------------- */
+  /* --- Capacidades NO orgánicas a integrar (9 categorías, -4) --------------- */
   var capacidadesNoOrganicas = [
     { n: 1, nombre: "Red hospitalaria", desc: "Hospitales de alta/media/baja complejidad, clínicas, unidades móviles, evacuación médica y telemedicina." },
     { n: 2, nombre: "Puertos", desc: "Puertos marítimos comerciales y multipropósito; carga, descarga, almacenamiento, transporte y cabotaje." },
@@ -1623,7 +1623,7 @@ window.TEMA4 = (function () {
     "VIII": "#db2777", "X": "#6b7280", "XI": "#7c3aed", "I–XI": "#4f46e5",
   };
 
-  /* --- Nodos críticos y rutas vulnerables (§4.5: el riesgo se concentra
+  /* --- Nodos críticos y rutas vulnerables (-4.5: el riesgo se concentra
          en nodos y rutas). Coordenadas reales del teatro. --- */
   var nodosCriticos = [
     { nodo: "Puerto Bolívar + FC Cerrejón", dep: "La Guajira", lat: 12.233, lon: -71.983, criticidad: "alta", funcion: "Transportes",
@@ -1661,7 +1661,7 @@ window.TEMA4 = (function () {
   ];
 
   /* --- Nodos decisivos de sostenimiento, en orden de prioridad (presentación
-         oficial CCON No.1: §8 Prioridades). Distinto de nodosCriticos (que son
+         oficial CCON No.1: -8 Prioridades). Distinto de nodosCriticos (que son
          chokepoints analíticos): aquí es la jerarquía operacional de ciudades-nodo. --- */
   var nodosDecisivos = [
     { nodo: "Cartagena", dep: "Bolívar", lat: 10.40, lon: -75.51, prioridad: 1, tipoNodo: "Nodo Estratégico Conjunto", clase: "estrategico-conjunto", semaforo: "rojo", funcion: "Marítimo, aéreo y terrestre" },
@@ -1673,7 +1673,7 @@ window.TEMA4 = (function () {
   // semáforo del nodo decisivo (inferido del orden de prioridad por la fuente)
   var nodoSemColor = { rojo: "#e11d48", amarillo: "#d97706", verde: "#16a34a" };
 
-  /* --- Matriz de prioridades de sostenimiento (§8): 7 funciones críticas
+  /* --- Matriz de prioridades de sostenimiento (-8): 7 funciones críticas
          clasificadas ALTA/MEDIA/BAJA. Verbatim de la presentación. --- */
   var matrizPrioridades = [
     { prioridad: "ALTA", funcion: "Protección de la fuerza", sostiene: "Seguridad, defensa, inteligencia", nodos: "Cartagena, Barranquilla, corredores terrestres críticos", impacto: "Permite la libertad de acción y la supervivencia." },
@@ -1685,7 +1685,7 @@ window.TEMA4 = (function () {
     { prioridad: "BAJA", funcion: "Apoyo a la población", sostiene: "Asistencia humanitaria, cooperación", nodos: "Nodos regionales, corredores secundarios", impacto: "Fortalece legitimidad y apoyo social." },
   ];
 
-  /* --- 7 funciones críticas de priorización (qué se sostiene primero, §8.2) --- */
+  /* --- 7 funciones críticas de priorización (qué se sostiene primero, -8.2) --- */
   var funcionesCriticas = [
     { orden: 1, nombre: "Protección de la fuerza", desc: "Seguridad, defensa, inteligencia, vigilancia y control." },
     { orden: 2, nombre: "Movilidad y maniobra", desc: "Transporte, combustibles, mantenimiento de vehículos y medios de movimiento." },
@@ -1696,7 +1696,7 @@ window.TEMA4 = (function () {
     { orden: 7, nombre: "Apoyo a la población y cooperación", desc: "Apoyo a comunidades, asistencia humanitaria y acción integral." },
   ];
 
-  /* --- Zonas logísticas de profundidad + nodos de retaguardia nacional (§7) --- */
+  /* --- Zonas logísticas de profundidad + nodos de retaguardia nacional (-7) --- */
   var zonasLogisticas = [
     { nombre: "Zona del Interior", desc: "Apoyo logístico estratégico, generación de recursos y soporte institucional desde el territorio nacional.", nodos: ["Bogotá D.C.", "Medellín", "Cali", "Bucaramanga", "Barrancabermeja"] },
     { nombre: "Zona de Comunicaciones", desc: "Corredores que permiten el movimiento y flujo de personal, equipos, suministros e información.", nodos: ["Santa Marta", "Cartagena", "Riohacha", "Barranquilla", "Puerto Bolívar (La Guajira)"] },
@@ -1710,7 +1710,7 @@ window.TEMA4 = (function () {
     { ciudad: "Barrancabermeja", lat: 7.07, lon: -73.85, rol: "Refinación y combustibles (Ecopetrol)" },
   ];
 
-  /* --- Principios (§5 y §8) y lema de cierre --- */
+  /* --- Principios (-5 y -8) y lema de cierre --- */
   var principiosSostenimiento = [
     { nombre: "Integrado", desc: "Sincronización de capacidades." },
     { nombre: "Flexible", desc: "Adaptación a la situación." },
@@ -1722,7 +1722,7 @@ window.TEMA4 = (function () {
   var criteriosPriorizacion = ["Impacto directo en el cumplimiento de la misión.", "Consecuencia de falla (riesgo operacional).", "Tiempo de recuperación.", "Disponibilidad de medios y recursos.", "Interdependencia con otras funciones críticas."];
   var lemaSostenimiento = "SOSTENIMIENTO EFECTIVO = OPERACIONES CONTINUAS";
 
-  /* --- Plan de movimientos y transporte (§7) -------------------------------- */
+  /* --- Plan de movimientos y transporte (-7) -------------------------------- */
   var prioridadesTransporte = [
     { orden: 1, categoria: "Evacuación de heridos y personal crítico (MEDEVAC)" },
     { orden: 2, categoria: "Combustibles y municiones" },
@@ -1747,7 +1747,7 @@ window.TEMA4 = (function () {
     { modo: "Férrea", desc: "Red férrea del Caribe; transporte de carga y abastecimiento.", corredores: ["La Dorada–Chiriguaná–Santa Marta", "Chiriguaná–puertos del Caribe"] },
   ];
 
-  /* --- Riesgos, fricciones y limitaciones + resiliencia (§9-10) -------------- */
+  /* --- Riesgos, fricciones y limitaciones + resiliencia (-9-10) -------------- */
   var categoriasRiesgo = [
     { key: "riesgo", nombre: "Riesgos", def: "Factores que pueden afectar el sostenimiento y la continuidad de las operaciones.", color: "#e11d48" },
     { key: "friccion", nombre: "Fricciones", def: "Factores que generan atrasos, ineficiencias o desgaste en las operaciones.", color: "#d97706" },
@@ -2209,7 +2209,7 @@ window.TEMA4 = (function () {
     orbat: ["Orden de batalla", "Componentes del CCON 1 en símbología OTAN"],
     doctrina: ["Doctrina · PUCC", "Plan Unificado de Comandos Conjuntos 2023"],
     doctrinalog: ["Doctrina logística · Tema 4", "Funciones, estructura COL/COLOC/CODA, sostenimiento e índice ISR"],
-    prioridades: ["Prioridades de sostenimiento", "Qué se sostiene primero · nodos y funciones críticas (§8)"],
+    prioridades: ["Prioridades de sostenimiento", "Qué se sostiene primero · nodos y funciones críticas (-8)"],
     movimientos: ["Plan de movimientos", "Esquema de sostenimiento, zonas logísticas y flujo de transporte"],
     riesgos: ["Riesgos y resiliencia", "Fricciones, dependencias críticas y medidas de resiliencia"],
     gsed: ["Capacidades no orgánicas", "GSED, apoyos interinstitucionales y nación anfitriona del CCON 1"],
@@ -2446,7 +2446,7 @@ window.TEMA4 = (function () {
         onEachFeature: function (ft, ly) { var r = byId[ft.properties.id], es = estimISR[ft.properties.id];
           ly.bindTooltip("<b>" + ft.properties.nombre + "</b><br>" + (es ? "ISR s/d · datos insuficientes" : (r ? "ISR " + Math.round(r.isr) + " · " + ({A:"ALTO",M:"MEDIO",B:"BAJO"}[r.clase]) : "ISR s/d")), { sticky: true }); } }).addTo(sostLayer);
       (T4m.rutasVulnerables || []).forEach(function (rt) { if (!rt.path) return; var pl = L.polyline(rt.path, { color: "#e11d48", weight: 3, opacity: .8, dashArray: "7 5" });
-        pl.bindPopup('<div class="popup"><h4>' + rt.ruta + '</h4><div class="tag">Ruta vulnerable · §4.5</div><table><tr><td>Riesgo</td><td>' + rt.riesgo + '</td></tr><tr><td>Mitigación</td><td>' + rt.mitigacion + '</td></tr></table></div>'); sostLayer.addLayer(pl); });
+        pl.bindPopup('<div class="popup"><h4>' + rt.ruta + '</h4><div class="tag">Ruta vulnerable · -4.5</div><table><tr><td>Riesgo</td><td>' + rt.riesgo + '</td></tr><tr><td>Mitigación</td><td>' + rt.mitigacion + '</td></tr></table></div>'); sostLayer.addLayer(pl); });
       (T4m.nodosCriticos || []).forEach(function (nc) { var col = nc.criticidad === "alta" ? "#e11d48" : "#d97706";
         var icon = L.divIcon({ className: "", iconSize: [26, 26], iconAnchor: [13, 13], html: '<div class="mk pulse" style="width:24px;height:24px;background:' + col + ';color:' + col + '"><span style="color:#fff;font-weight:700;font-size:13px">!</span></div>' });
         var m = L.marker([nc.lat, nc.lon], { icon: icon, zIndexOffset: 700 });
@@ -3081,9 +3081,9 @@ window.TEMA4 = (function () {
     html += '<div class="section-label">Clases de artículos de abastecimiento</div><div class="t4-class">' +
       T4.clases.map(function (c) { return '<div class="c reveal"><span class="n">' + esc(c.num) + '</span><span class="t">' + esc(c.nombre) + "</span></div>"; }).join("") + "</div>";
 
-    // (Las prioridades de sostenimiento §8 —nodos decisivos, matriz, principios—
+    // (Las prioridades de sostenimiento -8 —nodos decisivos, matriz, principios—
     //  viven en su propia vista «Prioridades de sostenimiento».)
-    html += '<p class="t4-note reveal" style="margin-top:14px">▸ La jerarquía de <b>nodos decisivos</b>, la <b>matriz de prioridades</b> y las funciones críticas del §8 están en la vista <b>«Prioridades de sostenimiento»</b>.</p>';
+    html += '<p class="t4-note reveal" style="margin-top:14px">▸ La jerarquía de <b>nodos decisivos</b>, la <b>matriz de prioridades</b> y las funciones críticas del -8 están en la vista <b>«Prioridades de sostenimiento»</b>.</p>';
 
     pad.innerHTML = html;
     reveal(pad);
@@ -3137,7 +3137,7 @@ window.TEMA4 = (function () {
 
       var nodos = (T4.nodosCriticos || []).filter(function (n) { return n.dep === r.nombre; });
       var rutas = (T4.rutasVulnerables || []).filter(function (rt) { return new RegExp(r.nombre.split(" ")[0], "i").test(rt.ruta) || /Caribe|Magdalena/i.test(rt.ruta); });
-      $("#t4aprR").innerHTML = '<h4>Nodos críticos y rutas (§4.5)</h4>' +
+      $("#t4aprR").innerHTML = '<h4>Nodos críticos y rutas (-4.5)</h4>' +
         (nodos.length ? nodos.map(function (n) { return '<div class="item"><b>' + esc(n.nodo) + '</b><span class="crit ' + n.criticidad + '">' + n.criticidad + '</span><div class="sub">' + esc(n.razon) + "</div></div>"; }).join("") : '<div class="item"><div class="sub">Sin nodo crítico propio registrado; depende de nodos del teatro.</div></div>') +
         '<div class="item" style="border-top:1px dashed var(--glass-brd);padding-top:10px"><b>Rutas que lo afectan:</b>' +
         (rutas.length ? rutas.map(function (rt) { return '<div class="sub">▸ ' + esc(rt.ruta) + "</div>"; }).join("") : '<div class="sub">—</div>') + "</div>";
@@ -3197,7 +3197,7 @@ window.TEMA4 = (function () {
   }
 
   /* ============================================================
-     PRIORIDADES DE SOSTENIMIENTO (§8)
+     PRIORIDADES DE SOSTENIMIENTO (-8)
      ============================================================ */
   function buildPrioridades() {
     var pad = $("#prioridadesPad"), T4 = window.TEMA4; if (!T4) { pad.innerHTML = "<p class='count'>Datos no disponibles.</p>"; return; }
@@ -3229,11 +3229,11 @@ window.TEMA4 = (function () {
   }
 
   /* ============================================================
-     PLAN DE MOVIMIENTOS Y TRANSPORTE (§7)
+     PLAN DE MOVIMIENTOS Y TRANSPORTE (-7)
      ============================================================ */
   function buildMovimientos() {
     var pad = $("#movimientosPad"), T4 = window.TEMA4; if (!T4) { pad.innerHTML = "<p class='count'>Datos no disponibles.</p>"; return; }
-    var html = '<div class="t4-note reveal" style="margin:4px 0 12px">Esquema de sostenimiento conjunto: el flujo va del <b>origen estratégico nacional</b> a los <b>nodos estratégicos</b> del Caribe, de allí a <b>nodos avanzados</b> y a las <b>unidades</b> en el AOR. Fuente: presentación oficial CCON 1 (§6–7).</div>';
+    var html = '<div class="t4-note reveal" style="margin:4px 0 12px">Esquema de sostenimiento conjunto: el flujo va del <b>origen estratégico nacional</b> a los <b>nodos estratégicos</b> del Caribe, de allí a <b>nodos avanzados</b> y a las <b>unidades</b> en el AOR. Fuente: presentación oficial CCON 1 (-6–7).</div>';
     // prioridades de transporte
     html += '<div class="section-label">Prioridades de transporte</div><div class="fn-grid">' +
       (T4.prioridadesTransporte || []).map(function (p) { return '<div class="card reveal" style="padding:12px 14px;display:flex;align-items:center;gap:10px"><span style="font:800 18px JetBrains Mono;color:var(--cian)">' + p.orden + '</span><span style="font-size:12.5px">' + esc(p.categoria) + '</span></div>'; }).join("") + '</div>';
@@ -3263,12 +3263,12 @@ window.TEMA4 = (function () {
   }
 
   /* ============================================================
-     RIESGOS, FRICCIONES Y RESILIENCIA (§9-10)
+     RIESGOS, FRICCIONES Y RESILIENCIA (-9-10)
      ============================================================ */
   function buildRiesgos() {
     var pad = $("#riesgosPad"), T4 = window.TEMA4; if (!T4) { pad.innerHTML = "<p class='count'>Datos no disponibles.</p>"; return; }
     var cats = T4.categoriasRiesgo || [], riesgos = T4.riesgos || [];
-    var html = '<div class="t4-note reveal" style="margin:4px 0 12px">Factores que pueden degradar el sostenimiento, su impacto en las operaciones y las medidas de resiliencia. Fuente: presentación oficial CCON 1 (§9–10).</div>';
+    var html = '<div class="t4-note reveal" style="margin:4px 0 12px">Factores que pueden degradar el sostenimiento, su impacto en las operaciones y las medidas de resiliencia. Fuente: presentación oficial CCON 1 (-9–10).</div>';
     html += '<div class="section-label">Riesgos, fricciones y limitaciones (' + riesgos.length + ' factores · 6 categorías)</div><div class="fn-grid">';
     cats.forEach(function (c) {
       var items = riesgos.filter(function (r) { return r.cat === c.key; });
